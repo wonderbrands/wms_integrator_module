@@ -7,7 +7,7 @@ class wmsFields(models.Model):
     _inherit = 'sale.order'
     _description = 'WMS fields'
 
-    carrier = fields.Selection([
+    select_carrier = fields.Selection([
             ('FDX', 'FedEx'),
             ('EST', 'Estafeta'),
             ('DHL', 'DHL'),

@@ -21,7 +21,13 @@ class wmsFields(models.Model):
             ('CAMZ', 'Colecta Amazon'),
             ('RBY', 'Rapiboy'),
             ('CNV', 'Casanova'),
-            ('CNX', 'Conexión')
+            ('CNX', 'Conexión'),
+            ('TGR', 'Tres Guerras'),
+            ('CCPL', 'Colecta Coopel'),
+            ('AMPM', 'AMPM'),
+            ('IML', 'iMile'),
+            ('JTE', 'J&TExpress'),
+            ('YLT', 'Yaltec')
         ],string="Paquetería o Carrier")
 
     wms_status = fields.Selection([

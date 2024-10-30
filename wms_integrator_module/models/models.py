@@ -16,7 +16,7 @@ class CarrierSelector(models.Model):
         required = True
     )
 
-    full_name = fields.Float(compute='_compute_name')
+    full_name = fields.Char(compute='_compute_name')
 
     @api.depends('name', 'code')
     def _compute_name(self):

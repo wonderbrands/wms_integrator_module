@@ -7,12 +7,14 @@ class CarrierSelector(models.Model):
     _name = "carriers.list"
 
     name = fields.Char(
-        string = "Carrier Name"
+        string = "Carrier Name",
+        required = True
     )
 
     code = fields.Char(
         string = "Carrier internal code",
-        index = True
+        index = True,
+        required = True
     )
 
     full_name = fields.Float(compute='_compute_name')
@@ -20,7 +22,7 @@ class CarrierSelector(models.Model):
     @api.depends('name', 'code')
     def _compute_name(self):
         for record in self:
-            record.full_name = f"{record.code} {record.name}"
+            record.full_name = f"{"" if not record.code else record.code} {"" if not record.name else record.name}"
 
     @api.model
     def name_get(self):

@@ -6,9 +6,9 @@
             <field name="model">carriers.list</field>
             <field name="arch" type="xml">
                 <tree string="Carriers List">
+                    <field name="full_name"/>
                     <field name="name"/>
                     <field name="code"/>
-                    <field name="full_name"/>
                 </tree>
             </field>
         </record>

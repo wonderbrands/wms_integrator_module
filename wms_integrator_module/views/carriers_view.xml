@@ -46,5 +46,11 @@
                   parent="sale.sale_menu_root" 
                   action="action_carriers_list" 
                   sequence="25" />
+
+        <!-- Define the Security Group -->
+        <record id="group_carrier_editor" model="res.groups">
+            <field name="name">Carrier Editor</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
     </data>
 </odoo>

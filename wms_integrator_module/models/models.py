@@ -22,7 +22,7 @@ class CarrierSelector(models.Model):
     @api.depends('name', 'code')
     def _compute_name(self):
         for record in self:
-            record.full_name = f"{"" if not record.code else record.code} {"" if not record.name else record.name}"
+            record.full_name = f"{'' if not record.code else record.code} {'' if not record.name else record.name}"
 
     @api.model
     def name_get(self):

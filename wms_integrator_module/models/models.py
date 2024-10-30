@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 
-class CarrierSelector(model.model):
+class CarrierSelector(models.Model):
     _name = "carriers.list"
 
     name = fields.Char(

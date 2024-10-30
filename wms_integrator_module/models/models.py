@@ -20,7 +20,7 @@ class CarrierSelector(models.Model):
     @api.depends('name', 'code')
     def _compute_name(self):
         for record in self:
-            record.total = f"{record.code} {record.name}"
+            record.full_name = f"{record.code} {record.name}"
 
     @api.model
     def name_get(self):

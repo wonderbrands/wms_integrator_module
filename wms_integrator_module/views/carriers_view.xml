@@ -52,5 +52,19 @@
             <field name="name">Carrier Editor</field>
             <field name="category_id" ref="base.module_category_hidden"/>
         </record>
+
+        <!-- Insert in sale order view-->
+        <record id="view_order_form_inherit_carrier" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.carrier</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!-- Targeting the "Other Information" sheet -->
+                <xpath expr="//sheet/notebook/page[@name='other_information']/group/field[@name='x_studio_paquetera_carrier']" position="after">
+                    <field name="carrier_selection_relational"/>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>

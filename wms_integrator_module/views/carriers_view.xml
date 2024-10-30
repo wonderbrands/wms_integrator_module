@@ -59,8 +59,8 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <!-- Targeting the "Other Information" sheet -->
-                <xpath expr="//sheet/notebook/page[@name='other_information']/group/field[@name='x_studio_paquetera_carrier']" position="after">
+                <!-- Locate the 'tag_ids' field in the 'Other Information' page and add 'carrier_selection_relational' after it -->
+                <xpath expr="//page[@name='other_information']/group/group[@name='sales_person']/field[@name='tag_ids']" position="after">
                     <field name="carrier_selection_relational"/>
                 </xpath>
             </field>

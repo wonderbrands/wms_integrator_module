@@ -13,7 +13,6 @@ class CarrierSelector(models.Model):
 
     code = fields.Char(
         string = "Carrier internal code",
-        index = True,
         required = True
     )
 

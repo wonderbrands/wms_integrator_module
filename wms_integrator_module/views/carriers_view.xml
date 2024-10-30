@@ -61,7 +61,7 @@
             <field name="arch" type="xml">
                 <!-- Locate the 'tag_ids' field in the 'Other Information' page and add 'carrier_selection_relational' after it -->
                 <xpath expr="//page[@name='other_information']/group/group[@name='sales_person']/field[@name='tag_ids']" position="after">
-                    <field name="carrier_selection_relational"/>
+                    <field name="carrier_selection_relational" options="{'no_create': True, 'no_open': True}"/>
                 </xpath>
             </field>
         </record>

@@ -14,10 +14,7 @@
                 </page>
             </xpath>
 
-            <!-- Agregar campo select_carrier después de warehouse_id -->
-            <xpath expr="//field[@name='client_order_ref']" position="after">
-                <field name="select_carrier"/>
-            </xpath>
+
         </field>
     </record>
   </data>

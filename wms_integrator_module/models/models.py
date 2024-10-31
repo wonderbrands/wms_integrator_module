@@ -3,9 +3,48 @@
 from odoo import models, fields, api
 
 
+class CarrierSelector(models.Model):
+    _name = "carriers.list"
+
+    name = fields.Char(
+        string = "Carrier Name",
+        required = True
+    )
+
+    code = fields.Char(
+        string = "Carrier internal code",
+        required = True
+    )
+
+    full_name = fields.Char(compute='_compute_name')
+
+    @api.depends('name', 'code')
+    def _compute_name(self):
+        for record in self:
+            record.full_name = f"{'' if not record.code else record.code} - {'' if not record.name else record.name}"
+
+    @api.model
+    def name_get(self):
+        result = []
+        for record in self:
+            display_name = record.name
+            result.append((record.id, display_name))
+        return result
+
+
+
+
 class wmsFields(models.Model):
     _inherit = 'sale.order'
     _description = 'WMS fields'
+
+    carrier_selection_relational = fields.Many2one(
+        name = "Select carrier",
+        comodel_name = "carriers.list",
+        options={
+            'no_create': True
+        }
+    )
 
     select_carrier = fields.Selection([
             ('FDX', 'FedEx'),

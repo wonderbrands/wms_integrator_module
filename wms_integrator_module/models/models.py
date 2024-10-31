@@ -8,7 +8,8 @@ class CarrierSelector(models.Model):
 
     name = fields.Char(
         string = "Carrier Name",
-        required = True
+        required = True,
+        index = True
     )
 
     code = fields.Char(
@@ -23,14 +24,6 @@ class CarrierSelector(models.Model):
         for record in self:
             record.full_name = f"{'' if not record.code else record.code} - {'' if not record.name else record.name}"
 
-    
-    @api.model
-    def name_get(self):
-        result = []
-        for record in self:
-            display_name = "" if not record.name else record.name
-            result.append((record.id, display_name))
-        return result
 
 
 

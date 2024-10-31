@@ -46,7 +46,7 @@ class wmsFields(models.Model):
         }
     )
 
-    rrier = fields.Selection([
+    select_carrier = fields.Selection([
             ('FDX', 'FedEx'),
             ('EST', 'Estafeta'),
             ('DHL', 'DHL'),

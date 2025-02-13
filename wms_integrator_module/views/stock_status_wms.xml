@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <record id="group_wms_stock_status_editor" model="res.groups">
+            <field name="name">WMS Stock picking status editor</field>
+        </record>
+
+        <record id="wms_integrator_module_stock_picking_status_tree" model="ir.ui.view">
+            <field name="name">wms_integrator_module_stock_picking_status_tree</field>
+            <field name="model">wms_integrator_module.stock_picking_status</field>
+            <field name="arch" type="xml">
+                <tree string="WMS Stock Status List" editable="bottom">
+                    <field name="full_name"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_wms_integrator_module_stock_picking_status" model="ir.actions.act_window">
+            <field name="name">WMS Stock picking status</field>
+            <field name="res_model">wms_integrator_module.stock_picking_status</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="wms_integrator_module_stock_picking_status_tree"/>
+        </record>
+
+        <menuitem id="menu_wms_integrator_module_stock_picking_status" 
+                  name="WMS Stock picking status" 
+                  parent="stock.menu_stock_root" 
+                  action="action_wms_integrator_module_stock_picking_status" 
+                  sequence="98"
+                  groups_id="wms_integrator_module.group_wms_stock_status_editor"/>
+
+
+        
+
+        <record id="stock_picking_add_wms_status_field" model="ir.ui.view">
+            <field name="name">stock_picking_add_wms_status_field</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='note']" position="after">
+                  <page string="WMS Status" name="wms_status">
+                    <group>
+                      <field name="wms_status" 
+                        string="WMS status"
+                        options="{'no_create': True, 'no_open': True}"/>
+                    </group>
+                  </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

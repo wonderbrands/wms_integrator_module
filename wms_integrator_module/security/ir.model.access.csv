@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 "access_carriers_list_read","carriers.list read access","model_carriers_list","base.group_user",1,0,0,0
 "access_carriers_list_editor","carriers.list editor access","model_carriers_list","group_carrier_editor",1,1,1,1
+"access_wms_status_stock_picking_read","wms_status_stock_picking_reader,"model_wms_integrator_module_stock_picking_status,"base.group_user",1,0,0,0
+"access_wms_status_stock_picking_edit","wms_status_stock_picking_editor,"model_wms_integrator_module_stock_picking_status,"wms_integrator_module.group_wms_stock_status_editor",1,1,1,1

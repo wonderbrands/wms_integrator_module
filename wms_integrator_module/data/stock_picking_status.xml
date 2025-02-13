@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+      <record id="pnff" model="wms_integrator_module.stock_picking_status">
+          <field name="name">Pendiente</field>
+          <field name="code">PNFF</field>
+      </record>
+
+      <record id="prep" model="wms_integrator_module.stock_picking_status">
+          <field name="name">Preparado</field>
+          <field name="code">PREP</field>
+      </record>
+
+      <record id="desp" model="wms_integrator_module.stock_picking_status">
+          <field name="name">Despachado</field>
+          <field name="code">DESP</field>
+      </record>
+
+      <record id="pnfs" model="wms_integrator_module.stock_picking_status">
+          <field name="name">Frenada (Sin Stock)</field>
+          <field name="code">PNFS</field>
+      </record>
+
+      <record id="pnfd" model="wms_integrator_module.stock_picking_status">
+          <field name="name">Frenada (Incompleta en OMS)</field>
+          <field name="code">PNFD</field>
+      </record>
+
+      <record id="pnfe" model="wms_integrator_module.stock_picking_status">
+          <field name="name">Frenada (Sin Etiqueta)</field>
+          <field name="code">PNFE</field>
+      </record>
+
+      <record id="pnpp" model="wms_integrator_module.stock_picking_status">
+          <field name="name">Frenada (Por Procesar)</field>
+          <field name="code">PNPP</field>
+      </record>
+
+      <record id="canc" model="wms_integrator_module.stock_picking_status">
+          <field name="name">Cancelado</field>
+          <field name="code">CANC</field>
+      </record>
+
+      <record id="arch" model="wms_integrator_module.stock_picking_status">
+          <field name="name">Archivada</field>
+          <field name="code">ARCH</field>
+      </record>
+    </data>
+</odoo>

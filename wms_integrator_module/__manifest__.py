@@ -19,17 +19,17 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale'],
+    'depends': [
+        'base',
+        'sale',
+        'stock'
+    ],
 
-    # always loaded
     'data': [
+        'data/stock_picking_status.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/carriers_view.xml',
         'security/ir.model.access.csv',
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
     ],
 }

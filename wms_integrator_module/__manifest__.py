@@ -26,6 +26,7 @@
     ],
 
     'data': [
+        'views/stock_status_wms.xml',
         'data/stock_picking_status.xml',
         'views/views.xml',
         'views/templates.xml',

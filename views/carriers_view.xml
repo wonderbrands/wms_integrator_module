@@ -5,11 +5,11 @@
             <field name="name">carriers.list.tree</field>
             <field name="model">carriers.list</field>
             <field name="arch" type="xml">
-                <tree string="Carriers List">
+                <list string="Carriers List">
                     <field name="full_name"/>
                     <field name="name"/>
                     <field name="code"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -36,7 +36,7 @@
         <record id="action_carriers_list" model="ir.actions.act_window">
             <field name="name">Carriers</field>
             <field name="res_model">carriers.list</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="view_id" ref="view_carriers_list_tree"/>
         </record>
 

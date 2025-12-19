@@ -47,6 +47,9 @@
                   action="action_carriers_list" 
                   sequence="25" />
 
+        <record id="group_carrier_editor" model="res.groups">
+            <field name="name">Carrier Editor</field>
+        </record>
 
         <!-- Insert in sale order view-->
         <record id="view_order_form_inherit_carrier" model="ir.ui.view">
